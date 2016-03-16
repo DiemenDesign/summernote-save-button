@@ -18,14 +18,14 @@
                     tooltip:'Save',
                     click:function(){
                         document.getElementById('summernote').submit(); // Change this ID ("summernote") reference to the ID of the Form that Summernote is within.
-                        $('i#snsave').removeClass('fa-lg text-danger');
+                        $('#snsave').removeClass('fa-lg text-danger');
                     }
                 });
                 return button.render();
             });
             this.events={
-                'summernote.change':function(we,e){
-                    $('i#snsave').addClass('fa-lg text-danger');
+                'summernote.change':function(){
+                    $('#snsave').addClass('fa-lg text-danger');
                 }
             };
         }
