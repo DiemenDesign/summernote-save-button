@@ -25,7 +25,7 @@
                 return $save;
             });
             this.events = {
-                'summernote.keyup': function (we, e) {
+                'summernote.change':function(we,e){
                     $('i#snsave').addClass('fa-lg text-danger');
                 }
             };
