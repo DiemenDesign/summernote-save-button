@@ -21,10 +21,9 @@
                         $('i#snsave').removeClass('fa-lg text-danger');
                     }
                 });
-                var $save=button.render();
-                return $save;
+                return button.render();
             });
-            this.events = {
+            this.events={
                 'summernote.change':function(we,e){
                     $('i#snsave').addClass('fa-lg text-danger');
                 }
