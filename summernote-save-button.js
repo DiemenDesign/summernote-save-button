@@ -14,20 +14,14 @@
             var ui=$.summernote.ui;
             context.memo('button.save',function(){
                 var button=ui.button({
-                    contents:'<i id="snsave" class="fa fa-save"/>', // Change this to the Icon you wish to use.
+                    contents:'<i class="fa fa-save text-danger"/>', // Change this to the Icon you wish to use.
                     tooltip:'Save',
                     click:function(){
-                        document.getElementById('summernote').submit(); // Change this ID ("summernote") reference to the ID of the Form that Summernote is within.
-                        $('#snsave').removeClass('fa-lg text-danger');
+                        this.form.submit();
                     }
                 });
                 return button.render();
             });
-            this.events={
-                'summernote.change':function(){
-                    $('#snsave').addClass('fa-lg text-danger');
-                }
-            };
         }
     });
 }));
