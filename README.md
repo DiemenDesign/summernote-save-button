@@ -35,9 +35,9 @@ This is the HTML directly in the page:
 
 Finally, customize the Summernote Toolbar, this can be used directly in your page:
 ```javascript
-var sn.unsaved=false;
+var unsaved=false;
 $(window).bind('beforeunload',function(){
-    if(sn.unsaved){
+    if(unsaved){
         return "You have unsaved changes in the Editor. Do you want to leave this page and discard your changes or stay on this page?";
     }
 });
