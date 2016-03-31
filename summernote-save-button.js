@@ -17,7 +17,7 @@
     });
     $.extend($.summernote.options,{
       save:{
-        icon:'<i class="fa fa-save text-danger"/>'
+        icon:'<i class="fa fa-save"/>'
       }
     });
     $.extend($.summernote.plugins,{
@@ -35,6 +35,7 @@
                     tooltip:lang.save.tooltip,
                     click:function(){
                         unsaved=false;
+                        $('.note-save button').removeClass('btn-danger');
                         this.form.submit();
                     }
                 });
@@ -43,6 +44,7 @@
             this.events={
                 'summernote.change':function(we,e){
                     unsaved=true;
+                    $('.note-save button').addClass('btn-danger');
                 }
             };
         }
