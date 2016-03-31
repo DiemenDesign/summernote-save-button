@@ -14,14 +14,21 @@
             var ui=$.summernote.ui;
             context.memo('button.save',function(){
                 var button=ui.button({
-                    contents:'<i class="fa fa-save text-danger"/>', // Change this to the Icon you wish to use.
+                    contents:'<i class="fa fa-save text-danger"/>',
                     tooltip:'Save',
                     click:function(){
+                        $("#block").css({display:"block"});
+                        sn.unsaved=false;
                         this.form.submit();
                     }
                 });
                 return button.render();
             });
+            this.events={
+                'summernote.change':function(we,e){
+                    sn.unsaved=true;
+                }
+            };
         }
     });
 }));
