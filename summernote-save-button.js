@@ -18,7 +18,7 @@
                     tooltip:'Save',
                     click:function(){
                         $("#block").css({display:"block"});
-                        sn.unsaved=false;
+                        unsaved=false;
                         this.form.submit();
                     }
                 });
@@ -26,7 +26,7 @@
             });
             this.events={
                 'summernote.change':function(we,e){
-                    sn.unsaved=true;
+                    unsaved=true;
                 }
             };
         }
