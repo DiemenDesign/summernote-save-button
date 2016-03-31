@@ -17,7 +17,6 @@
                     contents:'<i class="fa fa-save text-danger"/>',
                     tooltip:'Save',
                     click:function(){
-                        $("#block").css({display:"block"});
                         unsaved=false;
                         this.form.submit();
                     }
