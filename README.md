@@ -1,9 +1,48 @@
 # summernote-save-button
-Adds a Save Button when Summernote is used within a Form, so when the Save Button is clicked the form is submitted server side.
+A plugin for the [Summernote](https://github.com/summernote/summernote/) WYSIWYG editor.
 
-Save Button also changes colour, and slight size change to indicate when content in the editor has changed to remind user's to save what they have edited.
+Adds a button to the Toolbar, that allows saving edited content when Summernote is placed within a Form.
 
-Pull in the plugin like addng any javascript to your page.
+### Installation
 
-Add Button to the Toolbar:
-`['save',['save']]`
+#### 1. Include JS
+
+Include the following code after Summernote:
+
+```html
+<script src="summernote-save-button.js"></script>
+```
+
+#### 2. Supported languages
+
+Currently available in English!
+
+#### 3. Summernote options
+
+Finally, customize the Summernote Toolbar:
+
+```javascript
+            var sn.unsaved=false;
+            $(window).bind('beforeunload',function(){
+                if(sn.unsaved){
+                    return "You have unsaved changes in the Editor. Do you want to leave this page and discard your changes or stay on this page?";
+                }
+            });
+            $('.summernote').summernote({
+                height:<?php if($view=='bookings'||$view=='preferences')echo'100';else echo'500';?>,
+                tabsize:2,
+                toolbar:[
+                    ['save',['save']],
+                    ['style',['style']],
+                    ['font',['bold','italic','underline','clear']],
+                    ['fontname',['fontname']],
+                    ['color',['color']],
+                    ['para',['ul','ol','paragraph']],
+                    ['height',['height']],
+                    ['table',['table']],
+                    ['insert',['media','link','hr']],
+                    ['view',['fullscreen','codeview']],
+                    ['help',['help']]
+                ]
+            });
+```
