@@ -19,30 +19,43 @@ Currently available in English!
 
 #### 3. Summernote options
 
-Finally, customize the Summernote Toolbar:
+This is the HTML directly in the page:
+```html
+<form id="summernote" method="post" target="sp" action="[processing server side script]">
+ <input type="hidden" name="id" value="[database entry id or reference]">
+// the name "id" and value is what I use to reference the article or content reference
+ <input type="hidden" name="t" value="content">
+// the "t" (table) and value is the name of the database table
+ <input type="hidden" name="c" value="notes">
+// the "c" (column) and value is the name of the column in the database table
+ <textarea id="notes" class="form-control summernote" name="da" readonly>[content data to be edited]</textarea>
+// the "da" holds the content data from the editor to be maniupulated
+</form>
+```
 
+Finally, customize the Summernote Toolbar, this can be used directly in your page:
 ```javascript
-            var sn.unsaved=false;
-            $(window).bind('beforeunload',function(){
-                if(sn.unsaved){
-                    return "You have unsaved changes in the Editor. Do you want to leave this page and discard your changes or stay on this page?";
-                }
-            });
-            $('.summernote').summernote({
-                height:<?php if($view=='bookings'||$view=='preferences')echo'100';else echo'500';?>,
-                tabsize:2,
-                toolbar:[
-                    ['save',['save']],
-                    ['style',['style']],
-                    ['font',['bold','italic','underline','clear']],
-                    ['fontname',['fontname']],
-                    ['color',['color']],
-                    ['para',['ul','ol','paragraph']],
-                    ['height',['height']],
-                    ['table',['table']],
-                    ['insert',['media','link','hr']],
-                    ['view',['fullscreen','codeview']],
-                    ['help',['help']]
-                ]
-            });
+var sn.unsaved=false;
+$(window).bind('beforeunload',function(){
+    if(sn.unsaved){
+        return "You have unsaved changes in the Editor. Do you want to leave this page and discard your changes or stay on this page?";
+    }
+});
+$('.summernote').summernote({
+    tabsize:2,
+    toolbar:[
+        ['save',['save']],
+// this ['save',['save']] is what adds the actual button
+        ['style',['style']],
+        ['font',['bold','italic','underline','clear']],
+        ['fontname',['fontname']],
+        ['color',['color']],
+        ['para',['ul','ol','paragraph']],
+        ['height',['height']],
+        ['table',['table']],
+        ['insert',['media','link','hr']],
+        ['view',['fullscreen','codeview']],
+        ['help',['help']]
+    ]
+});
 ```
