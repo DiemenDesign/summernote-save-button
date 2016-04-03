@@ -22,19 +22,19 @@ Currently available in English!
 This is the HTML used directly in the page:
 ```html
 <form id="summernote" method="post" target="sp" action="[processing server side script]">
-// The target="sp" makes the form submit to the hidden iframe, giving an ajax, and non page reloading affect.
-// action="[processing server side script]" is the script to target to process the form data.
+<!-- The target="sp" makes the form submit to the hidden iframe, giving an ajax, and non page reloading affect.
+     action="[processing server side script]" is the script to target to process the form data. -->
  <input type="hidden" name="id" value="[database entry id or reference]">
-// the name "id" and value is what I use to reference the article or content reference
+<!-- The name "id" and value is what I use to reference the article or content reference. -->
  <input type="hidden" name="t" value="content">
-// the "t" (table) and value is the name of the database table
+<!-- The "t" (table) and value is the name of the database table. -->
  <input type="hidden" name="c" value="notes">
-// the "c" (column) and value is the name of the column in the database table
+<!-- The "c" (column) and value is the name of the column in the database table. -->
  <textarea id="notes" class="form-control summernote" name="da" readonly>[content data to be edited]</textarea>
-// the "da" holds the content data from the editor to be maniupulated upon form submit.
+<!-- The "da" holds the content data from the editor to be maniupulated upon form submit. -->
 </form>
 <iframe id="sp" name="sp" class="hidden"></iframe>
-// This is the hidden frame using Bootstrap's ".hidden" class to hide the iframe.
+<!-- This is the hidden frame using Bootstrap's ".hidden" class to hide the iframe. -->
 ```
 
 Finally, customize the Summernote Toolbar, this can be used directly in your page:
