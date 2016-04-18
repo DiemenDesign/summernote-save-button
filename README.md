@@ -3,6 +3,8 @@ A plugin for the [Summernote](https://github.com/summernote/summernote/) WYSIWYG
 
 Adds a button to the Toolbar, that allows saving edited content when Summernote is placed within a Form.
 
+Now with `ctrl+s` save functionality.
+
 ### Installation
 
 #### 1. Include JS
