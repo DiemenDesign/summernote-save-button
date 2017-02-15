@@ -13,6 +13,11 @@
             save:{
                 tooltip:'Save'
             }
+        },
+        'pt-BR':{
+            save:{
+                tooltip:'Salvar'
+            }
         }
     });
     $.extend($.summernote.options,{
