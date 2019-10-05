@@ -12,11 +12,12 @@ Include the following code after Summernote:
 
 ```html
 <script src="summernote-save-button.js"></script>
+<script src="lang/[language-COUNTRY].js"></script>
 ```
 
 #### 2. Supported languages
 
-Currently available in English!
+Supported languages can be found in the `lang` folder, and should be included after the plugin, then setting the chosen language when initialising Summernote.
 
 #### 3. Summernote options
 
@@ -35,18 +36,18 @@ This is the HTML used directly in the page:
 <!-- The "da" holds the content data from the editor to be maniupulated upon form submit. -->
 </form>
 <iframe id="sp" name="sp" class="hidden"></iframe>
-<!-- This is the hidden iframe using Bootstrap's ".hidden" class to hide the iframe. -->
+<!-- This is the hidden iframe using Bootstrap 3's ".hidden" class to hide the iframe. Use ".d-none" if using Bootstrap 4. -->
 ```
 
 Finally, customize the Summernote Toolbar, this can be used directly in your page:
 ```javascript
 $('.summernote').summernote({
-    tabsize: 2,
     toolbar: [
         ['save', ['save']], // The button
     ],
+    lang: 'en-US', // Change to your chosen language
     save:{
-        encode: false // true = encode editor data.
+        encode: false // true = encode editor data, you may need to unencode the data on your backend or before output.
     }
 });
 ```
