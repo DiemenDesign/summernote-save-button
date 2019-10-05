@@ -40,6 +40,7 @@
       context.memo('button.save',function () {
         var button = ui.button({
           contents: options.save.icon,
+          container: 'body',
           tooltip:  lang.save.tooltip,
           click:function () {
             if (options.save.encode) {
