@@ -45,9 +45,9 @@ $('.summernote').summernote({
     toolbar: [
         ['save', ['save']], // The button
     ],
-    lang: 'en-US', // Change to your chosen language
     save:{
-        encode: false // true = encode editor data, you may need to unencode the data on your backend or before output.
+      lang: 'en-US', // Change to your chosen language
+      encode: false // true = encode editor data, you may need to unencode the data on your backend or before output.
     }
 });
 ```
