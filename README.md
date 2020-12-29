@@ -48,6 +48,9 @@ $('.summernote').summernote({
     save:{
       lang: 'en-US', // Change to your chosen language
       encode: false // true = encode editor data, you may need to unencode the data on your backend or before output.
+      pageBlockClass: '.page-block', // Leave empty if not using an overlay to block user activity while data is sent.
+      pageBlockToggle: 'd-block', // Class to use to toggle Page Block. Remove the class via backend once data is safely stored.
+      saveBtnIndicator: 'btn-danger', // Class to change save button indication when content changes to warn of unsaved data.
     }
 });
 ```
